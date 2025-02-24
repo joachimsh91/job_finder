@@ -46,6 +46,13 @@ def get_locations(soup: BeautifulSoup) -> List[str]:
             if location.find('span', class_='list_city') else "N/A")
             for location in locations]
 
+def get_links(soup: BeautifulSoup) -> List[str]:
+    '''Gets link to job post'''
+    links = soup.find_all('a', class_='list_a can_visited list_a_has_logo')
+    return [(link.get('href')
+            if link.get('href') else "N/A")
+            for link in links]
+
 def get_jobs(soup: BeautifulSoup) -> List[List[str]]:
     '''Collects job data from parsed page content'''
     job_data = []
@@ -54,13 +61,16 @@ def get_jobs(soup: BeautifulSoup) -> List[List[str]]:
     salaries = get_salaries(soup)
     periods = get_periods(soup)
     locations = get_locations(soup)
+    links = get_links(soup)
 
-    for i in range(max(len(titles), len(companies), len(salaries), len(periods), len(locations))):
+    for i in range(max(len(titles), len(companies), len(salaries),
+                       len(periods), len(locations), len(links))):
         title = titles[i] if i < len(titles) else "N/A"
         company = companies[i] if i < len(companies) else "N/A"
         salary = salaries[i] if i < len(salaries) else "N/A"
         period = periods[i] if i < len(periods) else "N/A"
         location = locations[i] if i < len(locations) else "N/A"
-        job_data.append([title, company, salary, period, location])
+        link = links[i] if i < len(links) else "N/A"
+        job_data.append([title, company, salary, period, location, link])
 
     return job_data
