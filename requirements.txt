@@ -1,0 +1,7 @@
+beautifulsoup4==4.13.2
+numpy==2.2.3
+pandas==2.2.3
+pip==25.0.1
+requests==2.32.3
+setuptools==57.4.0
+soupsieve==2.6
