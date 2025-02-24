@@ -1,6 +1,6 @@
 # job_finder
 Web scraper written in Python for finding job listings.
-Currently in development as a portofolio project.
+Currently in development as a portfolio project.
 
 How to use:
 
