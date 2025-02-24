@@ -5,4 +5,4 @@ JOB_DB = r'C:\Users\<username>\repos\job_finder\database\jobdata.sqlite' # Path/
 JOB_COL = ['Title', 'Company', 'Salary', 'Period', 'Location'] # Columns used for Pandas
 MAIL_ADDRESS = ['sender_mail@gmail.com', 'reciever_mail@gmail.com'] # Sender and reciever mail address
 MAIL_PASSWORD = ['<sender_mail app password'] # App password for sender email
-ALL_DATA = [] # Temporary storage of scraped data to be used for data processing
+TEMP_DATA = [] # Temporary storage of scraped data to be used for data processing
