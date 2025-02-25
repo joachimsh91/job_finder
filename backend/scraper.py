@@ -3,6 +3,7 @@
 from typing import List
 import requests
 from bs4 import BeautifulSoup
+from backend.config import URL_LINK, TEMP_DATA
 
 def get_page(url: str, page: int) -> str:
     '''Connects to page'''
@@ -74,3 +75,11 @@ def get_jobs(soup: BeautifulSoup) -> List[List[str]]:
         job_data.append([title, company, salary, period, location, link])
 
     return job_data
+
+def scrape_pages(first_page: int, end_page: int):
+    '''Scrapes data for selected pages and stores data in list'''
+    for page in range(first_page, end_page):
+        request = get_page(URL_LINK, page)
+        soup = page_parser(request)
+        data = get_jobs(soup)
+        TEMP_DATA.extend(data)

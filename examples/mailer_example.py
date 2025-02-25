@@ -4,7 +4,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 from email.mime.text import MIMEText
 import smtplib
-from data import MAIL_ADDRESS, MAIL_PASSWORD
+from config import MAIL_ADDRESS, MAIL_PASSWORD
 
 def send_mail():
     '''Sends an email'''

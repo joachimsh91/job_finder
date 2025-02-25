@@ -1,9 +1,9 @@
 '''Main module'''
 
-from mailer import send_mail
-from scraper import scrape_pages
-from data import TEMP_DATA
-from data_processing import write_to_dataframe, write_to_html, write_to_csv, write_to_db
+from backend.mailer import send_mail
+from backend.scraper import scrape_pages
+from backend.config import TEMP_DATA
+from backend.data_processing import write_to_dataframe, write_to_html, write_to_csv, write_to_db
 
 def main():
     '''Main function'''
