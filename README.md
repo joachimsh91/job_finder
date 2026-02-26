@@ -11,7 +11,7 @@ How to use:
 5. Fill in the path and name of the database in JOB_DB
 6. Fill in sender and reciever email address in MAIL_ADDRESS
 7. Fill in sender email app password in MAIL_PASSWORD
-8. Let ALL_DATA stay empty, this is the temporary storage for scraped data
+8. Let TEMP_DATA stay empty, this is the temporary storage for scraped data
 9. The web scraper is run from main.py. Insert the number of first page and end page in scrape_pages() before running the script
 
 NOTE: Currently the scraper functions has hardcoded html tags from the website I used to scrape data. As of now these html tags needs to be changed depending on what 
